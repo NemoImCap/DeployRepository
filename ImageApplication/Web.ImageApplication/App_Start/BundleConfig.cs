@@ -21,7 +21,6 @@ namespace Web.ImageApplication
 
 
             bundles.Add(new ScriptBundle("~/Assets/plugins").Include(
-                "~/Assets/slider/sly.js",
                 "~/Assets/exif/exif.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(

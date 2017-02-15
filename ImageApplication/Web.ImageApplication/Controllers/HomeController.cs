@@ -23,14 +23,8 @@ namespace Web.ImageApplication.Controllers
         }
 
         // GET: Home
-        public ActionResult Index(HttpPostedFileBase image = null)
+        public ActionResult Index()
         {
-            var dir = Server.MapPath("/Content/images");
-            var path = Path.Combine(dir, "iguana" + ".jpg");
-            var elem = base.File(path, "image/jpeg");
-            //var item = new byte[image.ContentLength];
-
-            var directories = ImageMetadataReader.ReadMetadata(path);
             return View();
         }
 

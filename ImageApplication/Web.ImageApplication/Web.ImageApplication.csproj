@@ -143,12 +143,14 @@
     <Content Include="Assets\framework\angular-ui-bs\ui-bootstrap-2.5.0.min.js" />
     <Content Include="Assets\framework\angular\angular.min.js" />
     <Content Include="Assets\framework\ngHelperBusy\ngHelperBusy.js" />
-    <Content Include="Assets\slider\sly.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\images\iguana.jpg" />
+    <Content Include="Content\images\image-1.jpg" />
+    <Content Include="Content\images\image-2.jpg" />
+    <Content Include="Content\images\image-3.jpg" />
     <Content Include="Content\images\vondelpark.jpg" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\themes\base\accordion.css" />

@@ -21,6 +21,12 @@ namespace Web.ImageApplication
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             ConfigContainer.Configure();
+            InitDb();
+        }
+
+        protected void InitDb()
+        {
+          
         }
     }
 }
