@@ -1,34 +1,19 @@
-﻿jQuery(function ($) {
-    'use strict';
-    // -------------------------------------------------------------
-    //   Centered Navigation
-    // -------------------------------------------------------------
-    (function () {
-        var $frame = $('#centered');
-        var $wrap = $frame.parent();
+﻿function initMap(lat, lon) {
+    var myLatLng = { lat: lat, lng: lon };
 
-        // Call Sly on frame
-        $frame.sly({
-            horizontal: 1,
-            itemNav: 'centered',
-            smart: 1,
-            activateOn: 'click',
-            mouseDragging: 1,
-            touchDragging: 1,
-            releaseSwing: 1,
-            startAt: 4,
-            scrollBar: $wrap.find('.scrollbar'),
-            scrollBy: 1,
-            speed: 300,
-            elasticBounds: 1,
-            easing: 'easeOutExpo',
-            dragHandle: 1,
-            dynamicHandle: 1,
-            clickBar: 1,
+    var map = new google.maps.Map(document.getElementById('home_map_canvas'), {
+        zoom: 4,
+        center: myLatLng
+    });
 
-            // Buttons
-            prev: $wrap.find('.prev'),
-            next: $wrap.find('.next')
-        });
-    }());
-});
+    var marker = new google.maps.Marker({
+        position: myLatLng,
+        map: map,
+        title: 'Hello World!'
+    });
+}
+
+var toDecimal = function (number) {
+    return number[0].numerator + number[1].numerator /
+        (60 * number[1].denominator) + number[2].numerator / (3600 * number[2].denominator);
+};

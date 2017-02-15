@@ -15,7 +15,9 @@ select,
 textarea {
     max-width: 280px;
 }
-
+.area {
+    width: 68%;
+}
 body {
   background: #e8e8e8;
 }
@@ -291,4 +293,38 @@ body.ngHelperBusyLayerNoScroll {
 * html #footer {
    position:absolute;
    top:expression((0-(footer.offsetHeight)+(document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight)+(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop))+'px');
+}
+#home_map_canvas {
+    width: 400px;
+    height: 400px;
+}
+
+
+.img-item {
+    border:none;
+    display:block
+      
+}
+#outer{
+    width:100%;
+    margin:auto;
+}
+#photos {
+    list-style:none;
+    padding:5px;
+    width:100%;/* width added */
+}
+.wrap {
+    border:5px solid #ccc;
+    width: 100%;
+    overflow: auto;
+    padding-bottom:14px;
+}
+.wrap li {
+   margin:0 10px;
+    text-align:center;
+    display:-moz-inline-box; /* gecko*/  
+        display:inline-block;/* opera and safari*/            
+    padding:5px;
+    margin:5px;
 }

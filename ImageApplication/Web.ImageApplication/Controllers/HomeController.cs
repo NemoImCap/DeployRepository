@@ -34,9 +34,42 @@ namespace Web.ImageApplication.Controllers
             return View();
         }
 
-        public ActionResult GetImagesSlide()
+
+        public ActionResult GetAllImages()
         {
-            return PartialView();
+            var list = _imageItemService.GetImages();
+            return Json(list,JsonRequestBehavior.AllowGet);
+        }
+
+        public FileContentResult GetImage(int id)
+        {
+            var entity = _imageItemService.GetImageById(id);
+            if (entity != null)
+            {
+                return File(entity.ImageData, entity.ImageMimeType);
+            }
+            else
+            {
+                Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                return null;
+            }
+        }
+
+        [HttpPost]
+        public ActionResult UpdateFile(int id, string description = "")
+        {
+            var item = _imageItemService.GetImageById(id);
+            if (item != null)
+            {
+                item.Description = description;
+                _imageItemService.UpdateImage(item);
+            }
+            else
+            {
+                Response.StatusCode = (int) HttpStatusCode.BadRequest;
+                return Json("Upload failed");
+            }
+            return Json("Success");
         }
 
         [HttpPost]

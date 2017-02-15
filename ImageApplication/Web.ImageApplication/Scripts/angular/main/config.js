@@ -5,7 +5,7 @@
 app.controller('AppController', AppController);
 
 
-AppController.$inject = ['$scope'];
+AppController.$inject = ['$scope', '$http','imageService','appSettings'];
 
 
 /* Core Module Config

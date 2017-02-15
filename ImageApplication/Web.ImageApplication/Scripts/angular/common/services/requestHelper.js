@@ -1,4 +1,4 @@
-﻿function Api($http, $q, appSettings, $window) {
+﻿function requestHelper($http, $q, appSettings, $window) {
     var api = {};
 
     api.get = function (url, params) {

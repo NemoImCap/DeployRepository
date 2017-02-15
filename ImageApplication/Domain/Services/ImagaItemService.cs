@@ -34,5 +34,25 @@ namespace Domain.Services
                 throw;
             }
         }
+
+        public ImageItem GetImageById(int id)
+        {
+            var item = _imageItemRepository.FirstOrDefault(x => x.Id == id);
+            return item;
+        }
+
+        public IEnumerable<object> GetImages()
+        {
+            var list = _imageItemRepository.GetAll().Select(x=> new{Id = x.Id, Description = x.Description});
+            return list;
+        }
+
+        public void UpdateImage(ImageItem model)
+        {
+            if (model != null)
+            {
+                _imageItemRepository.Update(model);
+            }
+        }
     }
 }

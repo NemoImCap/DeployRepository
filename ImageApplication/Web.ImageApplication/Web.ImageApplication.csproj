@@ -205,8 +205,10 @@
     <Content Include="Assets\framework\angular\angular.min.js.map" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\angular\common\directives\getFileExif.js" />
+    <Content Include="Scripts\angular\common\directives\loadImage.js" />
+    <Content Include="Scripts\angular\common\directives\selectImage.js" />
     <Content Include="Scripts\angular\common\directives\uploadFile.js" />
-    <Content Include="Scripts\angular\common\services\api.js" />
+    <Content Include="Scripts\angular\common\services\requestHelper.js" />
     <Content Include="Scripts\angular\common\services\imageService.js" />
     <Content Include="Scripts\angular\common\services\spinnerService.js" />
     <Content Include="Scripts\angular\controllers\AppController.js" />
@@ -242,8 +244,8 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
-    <Content Include="Views\Home\GetImagesSlide.cshtml" />
     <Content Include="Views\Shared\_Images.cshtml" />
+    <Content Include="Views\Shared\_UploadFooter.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -3,8 +3,28 @@
 }
 <div class="container-fluid">
     <div class="row">
-        <div class="col-lg-4"><img id="blah" class="hidden" src="#" alt="Uploaded Image" /></div>
-        <div class="col-lg-4"></div>
-        <div class="col-lg-4"></div>
+        <div class="col-lg-4">
+            <img id="blah" class="hidden" src="#" alt="Uploaded Image" />
+            <div class="clearfix"></div>
+            <div ng-show="uploadedFile != null">
+                <a ng-click="showEdit = !showEdit">Edit Image Description</a>
+                <div ng-show="showEdit" class="form-group">
+                    <textarea ng-show="showEdit" class="form-control area" ng-model="updateModel.description" placeholder="Enter description"></textarea>
+                    <button class="btn btn-success" ng-click="updateImageDescription()"> Update description</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4" >
+            <label ng-hide="!uploadedFile"> Image Info</label>
+            <ul class="list-unstyled">
+                <li ng-repeat="(key, value) in uploadedFile.exifdata"><strong ng-bind="key"></strong> <small ng-bind="value"></small></li>
+            </ul>
+            <div class="alert alert-danger" ng-show="showExif && uploadedFile != null">
+                <strong>There is no exif!</strong> Check image exif
+            </div>
+        </div>
+        <div class="col-lg-4" ng-show="showMap">
+            <div id="home_map_canvas"></div>
+        </div>
     </div>
 </div>

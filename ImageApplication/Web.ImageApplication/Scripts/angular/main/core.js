@@ -19,22 +19,29 @@
             return url;
         },
 
-        "PostFile": "/Home/UploadFile?description="
+        "PostFile": "/Home/UploadFile?description=",
+        "GetAllImages": "/Home/GetAllImages",
+        "GetImageById": "/Home/GetImage/",
+        "UpdateDescription": "/Home/UpdateFile?"
     });
 
 //Services
 
-core.service('api', Api);
+core.service('requestHelper', requestHelper);
 core.service('spinnerService', spinnerService);
-core.service('imageService', imageService)
+core.service('imageService', imageService);
 
 spinnerService.$inject = ['$timeout', '$busy'];
-imageService.$inject = ['appSettings', 'api', 'spinnerService'];
-Api.$inject = ['$http', '$q', 'appSettings', '$window'];
+imageService.$inject = ['appSettings', 'requestHelper', 'spinnerService'];
+requestHelper.$inject = ['$http', '$q', 'appSettings', '$window'];
 
 //Derectives
 
 core.directive('uploadFile', uploadFile);
 core.directive('getFileExif', getFileExif);
+core.directive('selectImage', selectImage);
+core.directive('loadImage', loadImage);
 
-uploadFile.$inject = ['imageService'];
+selectImage.$inject = ['$http', 'appSettings'];
+loadImage.$inject = ['$http', 'appSettings'];
+uploadFile.$inject = ['imageService', '$location', '$anchorScroll'];

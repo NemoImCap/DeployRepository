@@ -1,4 +1,4 @@
-﻿function uploadFile(imageService) {
+﻿function uploadFile(imageService, $location, $anchorScroll) {
     return {
         restrict: 'A',
         link: function (scope, elem, attr) {
@@ -15,8 +15,10 @@
                     fileData.append(files[i].name, files[i]);
                 }
                 if (files.length) {
-                    imageService.UploadImage(fileData).then(function(response) {
-                        console.log(response);
+                    $location.hash('top');
+                    $anchorScroll();
+                    imageService.UploadImage(fileData, scope.description).then(function(response) {
+                        scope.loadImages();
                     });
                 } else {
                     console.log("no files");
