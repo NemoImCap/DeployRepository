@@ -18,6 +18,8 @@
                      output.src = URL.createObjectURL(evt.target.files[0]);
                      output.className = '';
                      scope.showExif = angular.equals(scope.uploadedFile.exifdata, {});
+                     scope.updateModel.description = "";
+                     scope.updateModel.id = null;
                      scope.$apply();
                  });
              });

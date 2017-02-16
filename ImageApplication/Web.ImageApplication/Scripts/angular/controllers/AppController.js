@@ -8,6 +8,7 @@
     $scope.showMap = false;
     $scope.showExif = false;
     $scope.uploadedFile = null;
+    $scope.updateFlag = false;
     $scope.updateModel = {
         id: null,
         description : ""
@@ -60,7 +61,7 @@
     $scope.updateImageDescription = function() {
         var request = imageService.UpdateDescription($scope.updateModel);
         request.then(function(response) {
-            console.log(response);
+            $scope.updateFlag = true;
         });
     }
 

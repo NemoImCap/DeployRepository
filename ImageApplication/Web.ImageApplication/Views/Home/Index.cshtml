@@ -10,7 +10,10 @@
                 <a ng-click="showEdit = !showEdit">Edit Image Description</a>
                 <div ng-show="showEdit" class="form-group">
                     <textarea ng-show="showEdit" class="form-control area" ng-model="updateModel.description" placeholder="Enter description"></textarea>
-                    <button class="btn btn-success" ng-click="updateImageDescription()"> Update description</button>
+                    <button class="btn btn-success" ng-show="updateModel.id" ng-click="updateImageDescription()"> Update description</button>
+                </div>
+                <div class="alert alert-success col-lg-8" ng-show="updateFlag">
+                    <strong>There is no exif!</strong> Description Updated <a href="#"><i ng-click="updateFlag = !updateFlag" class="glyphicon glyphicon-remove"></i></a>
                 </div>
             </div>
         </div>
