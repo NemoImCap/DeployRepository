@@ -17,8 +17,10 @@
                 if (files.length) {
                     $location.hash('top');
                     $anchorScroll();
-                    imageService.UploadImage(fileData, scope.description).then(function(response) {
+                    imageService.UploadImage(fileData, scope.updateModel.description).then(function (response) {
                         scope.loadImages();
+                        scope.showEdit = false;
+                        scope.updateModel.description = "";
                     });
                 } else {
                     console.log("no files");

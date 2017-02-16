@@ -53,7 +53,7 @@
     }
 
     $scope.sendDescription = function(item) {
-        $scope.updateModel.description = item.Description;
+        $scope.updateModel.description = item.Description || "";
         $scope.updateModel.id = item.Id;
     }
 

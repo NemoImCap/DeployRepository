@@ -328,3 +328,10 @@ body.ngHelperBusyLayerNoScroll {
     padding:5px;
     margin:5px;
 }
+
+.item-img {
+    width: 250px;
+    height: 200px;
+    cursor: pointer;
+
+}

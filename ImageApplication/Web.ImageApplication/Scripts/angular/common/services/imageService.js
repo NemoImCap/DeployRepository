@@ -7,17 +7,17 @@
     }
 
     self.GetAllImages = function() {
-        var promise = spinnerService.during(requestHelper.get(appSettings.GetAllImages, ""));
+        var promise = requestHelper.get(appSettings.GetAllImages, "");
         return promise;
     }
 
     self.UpdateDescription = function(model) {
-        var promise = spinnerService.during(requestHelper.post(appSettings.UpdateDescription + "id=" + model.id + "&description=" + model.description, ""));
+        var promise = requestHelper.post(appSettings.UpdateDescription + "id=" + model.id + "&description=" + model.description, "");
         return promise;
     }
 
     self.GetImageById = function(id) {
-        var promise = spinnerService.during(requestHelper.get(appSettings.GetImageById + id, ""));
+        var promise = requestHelper.get(appSettings.GetImageById + id, "");
         return promise;
     }
     return self;

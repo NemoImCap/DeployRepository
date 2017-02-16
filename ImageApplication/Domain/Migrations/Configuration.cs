@@ -1,4 +1,5 @@
 using System.IO;
+using System.Reflection;
 using Domain.Context;
 using Domain.Domain.Entity;
 
@@ -18,9 +19,9 @@ namespace Domain.Migrations
 
         protected override void Seed(EfDbContext context)
         {
-            var getFiles =
-                Directory.GetFiles(
-                    "E:\\ImageApplication\\DeployRepository\\ImageApplication\\Web.ImageApplication\\Content\\images");
+            //var getFiles = Directory.GetFiles("E:\\ImageApplication\\DeployRepository\\ImageApplication\\Web.ImageApplication\\Content\\images");
+            var root = Path.GetPathRoot(Environment.CurrentDirectory);
+            var getFiles = Directory.GetFiles(root + "\\ImageApplication\\DeployRepository\\ImageApplication\\Web.ImageApplication\\Content\\images");
             foreach (var path in getFiles)
             {
                 var file = new FileStream(path, FileMode.Open);
@@ -28,10 +29,11 @@ namespace Domain.Migrations
                 var model = new ImageItem
                 {
                     ImageData = bytes,
-                    Description = "Gretee",
+                    Description = "DB init",
                     ImageMimeType = "image/jpeg"
                 };
                 file.Read(bytes, 0, (int)file.Length);
+                context.Entry(model).State = System.Data.Entity.EntityState.Added;
                 context.ImageItems.Add(model);
             }
         }

@@ -26,7 +26,26 @@ namespace Web.ImageApplication
 
         protected void InitDb()
         {
-          
+            //var context = new EfDbContext();
+            //var getFiles = Directory.GetFiles(System.AppDomain.CurrentDomain.BaseDirectory + "\\Content\\images");
+            //foreach (var path in getFiles)
+            //{
+            //    var file = new FileStream(path, FileMode.Open);
+            //    byte[] bytes = new byte[file.Length];
+            //    var model = new ImageItem
+            //    {
+            //        ImageData = bytes,
+            //        Description = "Initializ db",
+            //        ImageMimeType = "image/jpeg"
+            //    };
+            //    file.Read(bytes, 0, (int)file.Length);
+            //    using (var dbCtx = new EfDbContext())
+            //    {
+            //        dbCtx.Entry(model).State = System.Data.Entity.EntityState.Added;
+            //        context.ImageItems.Add(model);
+            //        dbCtx.SaveChanges();
+            //    }
+            //}
         }
     }
 }
