@@ -16,8 +16,7 @@
                             var long = EXIF.getTag(this, 'GPSLongitude');
                             var latit = EXIF.getTag(this, 'GPSLatitude');
                             if (!angular.isUndefined(long) && !angular.isUndefined(latit)) {
-                                initMap(toDecimal(latit), toDecimal(long));
-                                google.maps.event.addDomListener(window, 'load', initMap);
+                                setMarker(toDecimal(latit), toDecimal(long));
                                 scope.$parent.showMap = true;
                             } else {
                                 scope.$parent.showMap = false;
