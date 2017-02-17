@@ -18,15 +18,15 @@
         $scope.loadImages();
     }
 
-    $scope.loadImages = function() {
+    $scope.loadImages = function () {
         var request = imageService.GetAllImages().then(function (response) {
-            $scope.images = response.data;
             $scope.dataLoaded(response.data);
         });
     }
 
-    $scope.dataLoaded = function(response) {
-        if (response.length) {
+    $scope.dataLoaded = function (data) {
+        $scope.images = data;
+        if ($scope.images.length) {
             $http({
                 url: appSettings.serviceUrl(window.location.href) + appSettings.GetImageById + $scope.images[0].Id,
                 method: "GET",

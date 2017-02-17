@@ -25,10 +25,6 @@ namespace Web.ImageApplication
 
 
             builder.RegisterControllers(typeof(MvcApplication).Assembly);
-            builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
-
-            builder.RegisterType<EfDbContext>().AsSelf().InstancePerLifetimeScope();
-            //builder.RegisterType<EfDbContext>().AsSelf().InstancePerRequest();
 
             builder.RegisterType<EfDbContext>().AsSelf().InstancePerLifetimeScope();
 

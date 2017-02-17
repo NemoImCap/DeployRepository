@@ -15,7 +15,7 @@ function setMarker(lat, lon) {
         title: 'Was here!'
     });
     marker.setMap(map);
-    }, 1000);
+    }, 500);
 }
 
 
