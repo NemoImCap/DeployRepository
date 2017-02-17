@@ -2,6 +2,8 @@
 var marker;
 
 function setMarker(lat, lon) {
+    map = null;
+    setTimeout(function (){
     var getLocationMap = { lat: Number(lat.toFixed(3)), lng: Number(lon.toFixed(3)) };
     map = new google.maps.Map(document.getElementById('home_map_canvas'), {
         zoom: 2,
@@ -13,6 +15,7 @@ function setMarker(lat, lon) {
         title: 'Was here!'
     });
     marker.setMap(map);
+    }, 1000);
 }
 
 
