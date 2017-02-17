@@ -210,6 +210,7 @@
     <Content Include="Scripts\angular\common\directives\loadImage.js" />
     <Content Include="Scripts\angular\common\directives\selectImage.js" />
     <Content Include="Scripts\angular\common\directives\uploadFile.js" />
+    <Content Include="Scripts\angular\common\services\exifService.js" />
     <Content Include="Scripts\angular\common\services\requestHelper.js" />
     <Content Include="Scripts\angular\common\services\imageService.js" />
     <Content Include="Scripts\angular\common\services\spinnerService.js" />

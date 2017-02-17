@@ -1,28 +1,19 @@
-﻿function selectImage($http, appSettings) {
+﻿function selectImage($http, appSettings, imageService, exifService) {
     return {
         restrict: 'A',
         link: function (scope, elem, attr) {
-            elem.on("click", function(evt) {
+            elem.on("click", function (evt) {
                 if (attr.id != null) {
-                    $http({
-                        url: appSettings.serviceUrl(window.location.href) + appSettings.GetImageById + +attr.id,
-                        method: "GET",
-                        responseType: "blob"
-
-                    }).then(function (response) {
-                        EXIF.getData(response.data, function() {
-                            var output = document.getElementById('blah');
-                            output.src = URL.createObjectURL(response.data);;
-                            var long = EXIF.getTag(this, 'GPSLongitude');
-                            var latit = EXIF.getTag(this, 'GPSLatitude');
-                            if (!angular.isUndefined(long) && !angular.isUndefined(latit)) {
-                                setMarker(toDecimal(latit), toDecimal(long));
-                                scope.$parent.showMap = true;
-                            } else {
-                                scope.$parent.showMap = false;
+                    imageService.GetImageById(attr.id).then(function (response) {
+                        exifService.exif.getData(response.data, function () {
+                            var coord = exifService.calculateGeoCoordinates(this);
+                            exifService.setImageSrc(response.data);
+                            var isExifCord = !angular.isUndefined(coord.latit) || !angular.isUndefined(coord.lon);
+                            if (isExifCord) {
+                                setMarker(toDecimal(coord.latit), toDecimal(coord.lon));
                             }
+                            scope.$parent.showMap = isExifCord;
                             scope.$parent.uploadedFile = this;
-                            output.className = '';
                             scope.$parent.showExif = angular.equals(scope.uploadedFile.exifdata, {});
                             scope.$apply();
                         });

@@ -1,8 +1,8 @@
 ﻿function AppController(
     $scope,
-    $http,
     imageService,
-    appSettings) {
+    appSettings,
+    exifService) {
 
     $scope.search = null;
     $scope.showMap = false;
@@ -11,10 +11,10 @@
     $scope.updateFlag = false;
     $scope.updateModel = {
         id: null,
-        description : ""
+        description: ""
     }
     $scope.images = [];
-    $scope.init = function() {
+    $scope.init = function () {
         $scope.loadImages();
     }
 
@@ -27,39 +27,29 @@
     $scope.dataLoaded = function (data) {
         $scope.images = data;
         if ($scope.images.length) {
-            $http({
-                url: appSettings.serviceUrl(window.location.href) + appSettings.GetImageById + $scope.images[0].Id,
-                method: "GET",
-                responseType: "blob"
-
-            }).then(function (response) {
-                EXIF.getData(response.data, function () {
-                    var output = document.getElementById('blah');
-                    output.src = URL.createObjectURL(response.data);;
-                    var long = EXIF.getTag(this, 'GPSLongitude');
-                    var latit = EXIF.getTag(this, 'GPSLatitude');
-                    if (!angular.isUndefined(long) && !angular.isUndefined(latit)) {
-                        setMarker(toDecimal(latit), toDecimal(long));
-                        $scope.showMap = true;
-                    } else {
-                        $scope.showMap = false;
+            imageService.GetImageById($scope.images[0].Id).then(function (response) {
+                exifService.exif.getData(response.data, function () {
+                    var coord = exifService.calculateGeoCoordinates(this);
+                    exifService.setImageSrc(response.data);
+                    $scope.showMap = !angular.isUndefined(coord.latit) || !angular.isUndefined(coord.lon)
+                    if ($scope.showMap) {
+                        setMarker(toDecimal(coord.latit), toDecimal(coord.lon));
                     }
-                    $scope.uploadedFile = this;
-                    output.className = '';
+                    $scope.uploadedFile = response.data;
                     $scope.showExif = angular.equals($scope.uploadedFile.exifdata, {});
                 });
             });
         }
     }
 
-    $scope.sendDescription = function(item) {
+    $scope.sendDescription = function (item) {
         $scope.updateModel.description = item.Description || "";
         $scope.updateModel.id = item.Id;
     }
 
-    $scope.updateImageDescription = function() {
+    $scope.updateImageDescription = function () {
         var request = imageService.UpdateDescription($scope.updateModel);
-        request.then(function(response) {
+        request.then(function (response) {
             $scope.updateFlag = true;
         });
     }

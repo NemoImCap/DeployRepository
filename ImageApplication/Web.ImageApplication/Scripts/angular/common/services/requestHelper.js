@@ -1,18 +1,19 @@
 ﻿function requestHelper($http, $q, appSettings, $window) {
     var api = {};
 
-    api.get = function (url, params) {
+    api.get = function (url, params, config) {
         var deferred = $q.defer();
         var apiUrl = appSettings.serviceUrl($window.location.href) + url + params;
-            $http({
-                method: 'GET',
-                url: apiUrl,
-            }).then(function (response) {
-                deferred.resolve(response);
-                },
-                function(response) {
-                    deferred.reject(response);
-                });
+        $http({
+            method: 'GET',
+            url: apiUrl,
+            responseType: config || ""
+        }).then(function (response) {
+            deferred.resolve(response);
+        },
+            function (response) {
+                deferred.reject(response);
+            });
         return deferred.promise;
     },
 
@@ -34,7 +35,7 @@
            .then(function (response) {
                deferred.resolve(response);
            },
-                function(response) {
+                function (response) {
                     deferred.reject(response);
                 });
         return deferred.promise;

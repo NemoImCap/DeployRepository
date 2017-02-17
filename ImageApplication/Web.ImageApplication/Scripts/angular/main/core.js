@@ -1,4 +1,4 @@
-﻿var core = angular.module("core", [ "ngHelperBusy", 'ui.bootstrap'])
+﻿var core = angular.module("core", ["ngHelperBusy", 'ui.bootstrap'])
     .constant('keyCodes', {
         esc: 27,
         space: 32,
@@ -30,6 +30,7 @@
 core.service('requestHelper', requestHelper);
 core.service('spinnerService', spinnerService);
 core.service('imageService', imageService);
+core.service('exifService', exifService);
 
 spinnerService.$inject = ['$timeout', '$busy'];
 imageService.$inject = ['appSettings', 'requestHelper', 'spinnerService'];
@@ -42,6 +43,7 @@ core.directive('getFileExif', getFileExif);
 core.directive('selectImage', selectImage);
 core.directive('loadImage', loadImage);
 
-selectImage.$inject = ['$http', 'appSettings'];
-loadImage.$inject = ['$http', 'appSettings'];
+selectImage.$inject = ['$http', 'appSettings', 'imageService', 'exifService'];
+loadImage.$inject = ['imageService', 'exifService'];
+getFileExif.$inject = ['exifService'];
 uploadFile.$inject = ['imageService', '$location', '$anchorScroll'];
