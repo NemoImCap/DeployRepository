@@ -4,12 +4,12 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-4">
-            <img id="blah" class="hidden" src="#" alt="Uploaded Image" />
+            <img id="blah" class="hidden img-thumbnail" src="#" alt="Uploaded Image" />
             <div class="clearfix"></div>
             <div ng-show="uploadedFile != null">
                 <a ng-click="showEdit = !showEdit">Edit Image Description</a>
                 <div ng-if="showEdit" class="form-group">
-                    <textarea ng-if="showEdit" class="form-control area" ng-model="updateModel.description" placeholder="Enter description"></textarea>
+                    <trix-editor class="form-control" angular-trix ng-model="updateModel.description"></trix-editor>
                     <button class="btn btn-success" ng-show="updateModel.id" ng-click="updateImageDescription()"> Update description</button>
                 </div>
                 <div class="alert alert-success col-lg-8" ng-if="updateFlag">

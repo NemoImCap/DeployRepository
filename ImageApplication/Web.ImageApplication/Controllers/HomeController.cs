@@ -50,6 +50,7 @@ namespace Web.ImageApplication.Controllers
         }
 
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult UpdateFile(int id, string description = "")
         {
             var item = _imageItemService.GetImageById(id);
@@ -67,6 +68,7 @@ namespace Web.ImageApplication.Controllers
         }
 
         [HttpPost]
+        [ValidateInput(false)]
         public async Task<JsonResult> UploadFile(string description = "")
         {
             try

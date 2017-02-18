@@ -1,4 +1,4 @@
-﻿var core = angular.module("core", ["ngHelperBusy", 'ui.bootstrap'])
+﻿var core = angular.module("core", ["ngHelperBusy", 'ui.bootstrap', 'angularTrix'])
     .constant('keyCodes', {
         esc: 27,
         space: 32,

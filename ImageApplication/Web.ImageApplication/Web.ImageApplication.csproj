@@ -143,6 +143,7 @@
     <Content Include="Assets\framework\angular-ui-bs\ui-bootstrap-2.5.0.min.js" />
     <Content Include="Assets\framework\angular\angular.min.js" />
     <Content Include="Assets\framework\ngHelperBusy\ngHelperBusy.js" />
+    <Content Include="Assets\framework\trix-angular\trix-angular.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
