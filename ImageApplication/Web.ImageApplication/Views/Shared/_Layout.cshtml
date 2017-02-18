@@ -6,7 +6,10 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
 </head>
-<body ng-app="app" ng-controller="AppController" ng-cloak>
+<body ng-app="app" ng-controller="AppController">
+    <div id="splash" ng-cloak>
+        <div id="splash-spinner"></div>
+    </div>
     <div class="navbar">
         @Html.Partial("_Images")
     </div>
@@ -18,13 +21,13 @@
     </div>
     <div ng-helper-busy></div>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyAuCLNtXXLsl8P0J2T-rj0BJ1db6PGWo"></script>
-    <script src="/Scripts/scripts.js"></script>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/Assets/plugins")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/Angular/")
     @Scripts.Render("~/AngularScript/")
     @Scripts.Render("~/AngularApp/")
+    <script src="/Scripts/scripts.js"></script>
     @RenderSection("scripts", required: false)
 </body>
 </html>
