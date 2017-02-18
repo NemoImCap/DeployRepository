@@ -8,25 +8,25 @@
             <div class="clearfix"></div>
             <div ng-show="uploadedFile != null">
                 <a ng-click="showEdit = !showEdit">Edit Image Description</a>
-                <div ng-show="showEdit" class="form-group">
-                    <textarea ng-show="showEdit" class="form-control area" ng-model="updateModel.description" placeholder="Enter description"></textarea>
+                <div ng-if="showEdit" class="form-group">
+                    <textarea ng-if="showEdit" class="form-control area" ng-model="updateModel.description" placeholder="Enter description"></textarea>
                     <button class="btn btn-success" ng-show="updateModel.id" ng-click="updateImageDescription()"> Update description</button>
                 </div>
-                <div class="alert alert-success col-lg-8" ng-show="updateFlag">
+                <div class="alert alert-success col-lg-8" ng-if="updateFlag">
                     <strong>There is no exif!</strong> Description Updated <a href="#"><i ng-click="updateFlag = !updateFlag" class="glyphicon glyphicon-remove"></i></a>
                 </div>
             </div>
         </div>
-        <div class="col-lg-4" >
+        <div class="col-lg-4">
             <label ng-hide="!uploadedFile"> Image Info</label>
             <ul class="list-unstyled">
                 <li ng-repeat="(key, value) in uploadedFile.exifdata"><strong ng-bind="key"></strong> <small ng-bind="value"></small></li>
             </ul>
-            <div class="alert alert-danger" ng-show="showExif && uploadedFile != null">
+            <div class="alert alert-danger" ng-if="showExif && uploadedFile != null">
                 <strong>There is no exif!</strong> Check image exif
             </div>
         </div>
-        <div class="col-lg-4" ng-show="showMap">
+        <div class="col-lg-4" ng-if="showMap">
             <div id="home_map_canvas"></div>
         </div>
     </div>

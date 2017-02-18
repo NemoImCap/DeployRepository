@@ -29,7 +29,7 @@ namespace Web.ImageApplication.Controllers
         }
 
 
-        public ActionResult GetAllImages()
+        public JsonResult GetAllImages()
         {
             var list = _imageItemService.GetImages();
             return Json(list,JsonRequestBehavior.AllowGet);

@@ -27,8 +27,8 @@
     $scope.dataLoaded = function (data) {
         $scope.images = data;
         if ($scope.images.length) {
-            imageService.GetImageById($scope.images[0].Id).then(function (response) {
-                $scope.sendDescription($scope.images[0]);
+            $scope.sendDescription($scope.images[0]);
+            imageService.GetImageById($scope.updateModel.id).then(function (response) {
                 exifService.exif.getData(response.data, function () {
                     var coord = exifService.calculateGeoCoordinates(this);
                     exifService.setImageSrc(response.data);
