@@ -5,7 +5,7 @@
 app.controller('AppController', AppController);
 
 
-AppController.$inject = ['$scope', '$http', 'imageService', 'appSettings', 'exifService', '$filter'];
+AppController.$inject = ['$scope', '$http', 'imageService', 'appSettings', 'exifService', '$filter', '$timeout'];
 
 
 /* Core Module Config
