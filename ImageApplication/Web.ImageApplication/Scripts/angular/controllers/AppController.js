@@ -1,8 +1,10 @@
 ﻿function AppController(
     $scope,
+    $http,
     imageService,
     appSettings,
-    exifService) {
+    exifService,
+    $filter) {
 
     $scope.search = null;
     $scope.showMap = false;
@@ -52,6 +54,12 @@
         var request = imageService.UpdateDescription($scope.updateModel);
         request.then(function (response) {
             $scope.updateFlag = true;
+
+            var found = $filter('filter')($scope.images, { Id: $scope.updateModel.id }, true);
+            if (found.length) {
+                found[0].Description = $scope.updateModel.description;
+            }
+
         });
     }
 
