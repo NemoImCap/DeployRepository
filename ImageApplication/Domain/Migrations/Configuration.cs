@@ -19,8 +19,7 @@ namespace Domain.Migrations
 
         protected override void Seed(EfDbContext context)
         {
-            //var getFiles = Directory.GetFiles("E:\\ImageApplication\\DeployRepository\\ImageApplication\\Web.ImageApplication\\Content\\images");
-            var root = Path.GetPathRoot(Environment.CurrentDirectory);
+            var root = Path.GetPathRoot(AppDomain.CurrentDomain.BaseDirectory);
             var getFiles = Directory.GetFiles(root + "\\ImageApplication\\DeployRepository\\ImageApplication\\Web.ImageApplication\\Content\\images");
             foreach (var path in getFiles)
             {

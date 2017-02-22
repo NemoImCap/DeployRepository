@@ -34,10 +34,6 @@ E:\ImageApplication\ImageApplication\Domain\obj\Debug\Domain.dll
 E:\ImageApplication\ImageApplication\Domain\obj\Debug\Domain.pdb
 E:\ImageApplication\ImageApplication\Domain\obj\Debug\Domain.Migrations.InitDb.resources
 E:\ImageApplication\ImageApplication\Domain\obj\Debug\Domain.csproj.GenerateResource.Cache
-E:\ImageApplication\DeployRepository\ImageApplication\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache
-E:\ImageApplication\DeployRepository\ImageApplication\Domain\obj\Debug\Domain.Migrations.InitDb.resources
-E:\ImageApplication\DeployRepository\ImageApplication\Domain\obj\Debug\Domain.Migrations.CorrectModel.resources
-E:\ImageApplication\DeployRepository\ImageApplication\Domain\obj\Debug\Domain.csproj.GenerateResource.Cache
 E:\ImageApplication\DeployRepository\ImageApplication\Domain\bin\Debug\Domain.dll.config
 E:\ImageApplication\DeployRepository\ImageApplication\Domain\bin\Debug\Domain.dll
 E:\ImageApplication\DeployRepository\ImageApplication\Domain\bin\Debug\Domain.pdb
@@ -83,5 +79,8 @@ E:\ImageApplication\DeployRepository\ImageApplication\Domain\bin\Debug\ru\System
 E:\ImageApplication\DeployRepository\ImageApplication\Domain\bin\Debug\ru\System.Web.WebPages.resources.dll
 E:\ImageApplication\DeployRepository\ImageApplication\Domain\bin\Debug\ru\System.Web.WebPages.Deployment.resources.dll
 E:\ImageApplication\DeployRepository\ImageApplication\Domain\bin\Debug\ru\System.Web.WebPages.Razor.resources.dll
+E:\ImageApplication\DeployRepository\ImageApplication\Domain\obj\Debug\Domain.Migrations.InitDb.resources
+E:\ImageApplication\DeployRepository\ImageApplication\Domain\obj\Debug\Domain.Migrations.CorrectModel.resources
+E:\ImageApplication\DeployRepository\ImageApplication\Domain\obj\Debug\Domain.csproj.GenerateResource.Cache
 E:\ImageApplication\DeployRepository\ImageApplication\Domain\obj\Debug\Domain.dll
 E:\ImageApplication\DeployRepository\ImageApplication\Domain\obj\Debug\Domain.pdb

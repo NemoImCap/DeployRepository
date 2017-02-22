@@ -34,7 +34,6 @@ E:\ImageApplication\ImageApplication\Web.ImageApplication\bin\ru\System.Web.WebP
 E:\ImageApplication\ImageApplication\Web.ImageApplication\obj\Debug\Web.ImageApplication.csprojResolveAssemblyReference.cache
 E:\ImageApplication\ImageApplication\Web.ImageApplication\obj\Debug\Web.ImageApplication.dll
 E:\ImageApplication\ImageApplication\Web.ImageApplication\obj\Debug\Web.ImageApplication.pdb
-E:\ImageApplication\DeployRepository\ImageApplication\Web.ImageApplication\obj\Debug\Web.ImageApplication.csprojResolveAssemblyReference.cache
 E:\ImageApplication\DeployRepository\ImageApplication\Web.ImageApplication\bin\Web.ImageApplication.dll.config
 E:\ImageApplication\DeployRepository\ImageApplication\Web.ImageApplication\bin\Web.ImageApplication.dll
 E:\ImageApplication\DeployRepository\ImageApplication\Web.ImageApplication\bin\Web.ImageApplication.pdb
@@ -89,5 +88,6 @@ E:\ImageApplication\DeployRepository\ImageApplication\Web.ImageApplication\bin\r
 E:\ImageApplication\DeployRepository\ImageApplication\Web.ImageApplication\bin\ru\System.Web.WebPages.resources.dll
 E:\ImageApplication\DeployRepository\ImageApplication\Web.ImageApplication\bin\ru\System.Web.WebPages.Deployment.resources.dll
 E:\ImageApplication\DeployRepository\ImageApplication\Web.ImageApplication\bin\ru\System.Web.WebPages.Razor.resources.dll
+E:\ImageApplication\DeployRepository\ImageApplication\Web.ImageApplication\obj\Debug\Web.ImageApplication.csprojResolveAssemblyReference.cache
 E:\ImageApplication\DeployRepository\ImageApplication\Web.ImageApplication\obj\Debug\Web.ImageApplication.dll
 E:\ImageApplication\DeployRepository\ImageApplication\Web.ImageApplication\obj\Debug\Web.ImageApplication.pdb
